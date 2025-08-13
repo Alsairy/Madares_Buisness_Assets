@@ -3,7 +3,7 @@
   "doctype": "Assignment Rule",
   "name": "MOE Asset Auto Assignment",
   "document_type": "MOE Asset",
-  "assign_condition": "doc.workflow_state == 'Assets Review'",
+  "condition": "doc.workflow_state == 'Assets Review'",
   "rule": "Round Robin",
   "users": [
    {
@@ -20,7 +20,7 @@
   "doctype": "Assignment Rule",
   "name": "MOE Asset Safety Review",
   "document_type": "MOE Asset",
-  "assign_condition": "doc.workflow_state == 'Safety Review'",
+  "condition": "doc.workflow_state == 'Safety Review'",
   "rule": "Round Robin",
   "users": [
    {
@@ -37,7 +37,7 @@
   "doctype": "Assignment Rule",
   "name": "MOE Asset Planning Review",
   "document_type": "MOE Asset",
-  "assign_condition": "doc.workflow_state == 'Planning Review'",
+  "condition": "doc.workflow_state == 'Planning Review'",
   "rule": "Round Robin",
   "users": [
    {
@@ -54,7 +54,7 @@
   "doctype": "Assignment Rule",
   "name": "MOE Asset Investment Review",
   "document_type": "MOE Asset",
-  "assign_condition": "doc.workflow_state == 'Investment Review'",
+  "condition": "doc.workflow_state == 'Investment Review'",
   "rule": "Round Robin",
   "users": [
    {
@@ -71,7 +71,7 @@
   "doctype": "Assignment Rule",
   "name": "MOE Asset Director Approval",
   "document_type": "MOE Asset",
-  "assign_condition": "doc.workflow_state == 'Director Approval'",
+  "condition": "doc.workflow_state == 'Director Approval'",
   "rule": "Round Robin",
   "users": [
    {
@@ -88,7 +88,7 @@
   "doctype": "Assignment Rule",
   "name": "Asset Allocation Request Auto Assignment",
   "document_type": "Asset Allocation Request",
-  "assign_condition": "doc.workflow_state == 'Assets Review'",
+  "condition": "doc.workflow_state == 'Assets Review'",
   "rule": "Round Robin",
   "users": [
    {
@@ -105,7 +105,7 @@
   "doctype": "Assignment Rule",
   "name": "Asset Allocation Director Approval",
   "document_type": "Asset Allocation Request",
-  "assign_condition": "doc.workflow_state == 'Director Approval'",
+  "condition": "doc.workflow_state == 'Director Approval'",
   "rule": "Round Robin",
   "users": [
    {
@@ -122,7 +122,7 @@
   "doctype": "Assignment Rule",
   "name": "Investment Preparation Safety Review",
   "document_type": "Investment Preparation",
-  "assign_condition": "doc.workflow_state == 'Safety Review'",
+  "condition": "doc.workflow_state == 'Safety Review'",
   "rule": "Round Robin",
   "users": [
    {
@@ -139,7 +139,7 @@
   "doctype": "Assignment Rule",
   "name": "Investment Preparation Director Approval",
   "document_type": "Investment Preparation",
-  "assign_condition": "doc.workflow_state == 'Director Approval'",
+  "condition": "doc.workflow_state == 'Director Approval'",
   "rule": "Round Robin",
   "users": [
    {
@@ -156,7 +156,7 @@
   "doctype": "Assignment Rule",
   "name": "Asset Document OCR Review",
   "document_type": "Asset Document",
-  "assign_condition": "doc.workflow_state == 'Under Review'",
+  "condition": "doc.workflow_state == 'Under Review'",
   "rule": "Round Robin",
   "users": [
    {
@@ -173,7 +173,7 @@
   "doctype": "Assignment Rule",
   "name": "Maintenance Request Safety Review",
   "document_type": "Maintenance Request",
-  "assign_condition": "doc.workflow_state == 'Safety Review'",
+  "condition": "doc.workflow_state == 'Safety Review'",
   "rule": "Round Robin",
   "users": [
    {
@@ -190,7 +190,7 @@
   "doctype": "Assignment Rule",
   "name": "Maintenance Request Director Approval",
   "document_type": "Maintenance Request",
-  "assign_condition": "doc.workflow_state == 'Director Approval'",
+  "condition": "doc.workflow_state == 'Director Approval'",
   "rule": "Round Robin",
   "users": [
    {
@@ -207,7 +207,7 @@
   "doctype": "Assignment Rule",
   "name": "Demolition Request Safety Review",
   "document_type": "Demolition Request",
-  "assign_condition": "doc.workflow_state == 'Safety Review'",
+  "condition": "doc.workflow_state == 'Safety Review'",
   "rule": "Round Robin",
   "users": [
    {
@@ -224,7 +224,7 @@
   "doctype": "Assignment Rule",
   "name": "Demolition Request Investment Review",
   "document_type": "Demolition Request",
-  "assign_condition": "doc.workflow_state == 'Investment Review'",
+  "condition": "doc.workflow_state == 'Investment Review'",
   "rule": "Round Robin",
   "users": [
    {
@@ -241,7 +241,7 @@
   "doctype": "Assignment Rule",
   "name": "Demolition Request Director Approval",
   "document_type": "Demolition Request",
-  "assign_condition": "doc.workflow_state == 'Director Approval'",
+  "condition": "doc.workflow_state == 'Director Approval'",
   "rule": "Round Robin",
   "users": [
    {
