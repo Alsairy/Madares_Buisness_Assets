@@ -88,5 +88,5 @@
   "script": "if doc.has_value_changed('workflow_state'):\n    from frappe import _\n    \n    state_messages = {\n        'Safety Review': _('Demolition request submitted for Safety Department review'),\n        'Investment Review': _('Demolition request submitted for Investment Department review'),\n        'Director Approval': _('Demolition request submitted for Director approval'),\n        'Approved': _('Demolition request has been approved')\n    }\n    \n    if doc.workflow_state in state_messages:\n        frappe.publish_realtime(\n            'msgprint',\n            {\n                'message': state_messages[doc.workflow_state],\n                'title': _('Workflow Update'),\n                'indicator': 'blue'\n            },\n            user=frappe.session.user\n        )",
   "disabled": 0,
   "description": "Send notifications when Demolition Request workflow state changes"
- },
+ }
 ]
