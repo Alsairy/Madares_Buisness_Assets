@@ -1,0 +1,98 @@
+[
+  {
+    "doctype": "Notification",
+    "enabled": 1,
+    "document_type": "MOE Asset",
+    "event": "Value Change",
+    "value_changed": "workflow_state",
+    "channel": "Email",
+    "subject": "MOE Asset {{ doc.name }} moved to {{ doc.workflow_state }}",
+    "message": "The MOE Asset {{ doc.name }} has transitioned to state: {{ doc.workflow_state }}.",
+    "recipients": [
+      {
+        "doctype": "Notification Recipient",
+        "receiver_by_role": "Assets Management Department"
+      }
+    ]
+  },
+  {
+    "doctype": "Notification",
+    "enabled": 1,
+    "document_type": "Asset Allocation Request",
+    "event": "Value Change",
+    "value_changed": "workflow_state",
+    "channel": "Email",
+    "subject": "Asset Allocation {{ doc.name }} moved to {{ doc.workflow_state }}",
+    "message": "The Asset Allocation Request {{ doc.name }} has transitioned to: {{ doc.workflow_state }}.",
+    "recipients": [
+      {
+        "doctype": "Notification Recipient",
+        "receiver_by_role": "Assets Management Department"
+      }
+    ]
+  },
+  {
+    "doctype": "Notification",
+    "enabled": 1,
+    "document_type": "Investment Preparation",
+    "event": "Value Change",
+    "value_changed": "workflow_state",
+    "channel": "Email",
+    "subject": "Investment Preparation {{ doc.name }} moved to {{ doc.workflow_state }}",
+    "message": "The Investment Preparation {{ doc.name }} has transitioned to: {{ doc.workflow_state }}.",
+    "recipients": [
+      {
+        "doctype": "Notification Recipient",
+        "receiver_by_role": "Investment Department"
+      }
+    ]
+  },
+  {
+    "doctype": "Notification",
+    "enabled": 1,
+    "document_type": "Asset Document",
+    "event": "Value Change",
+    "value_changed": "workflow_state",
+    "channel": "Email",
+    "subject": "Asset Document {{ doc.name }} moved to {{ doc.workflow_state }}",
+    "message": "The Asset Document {{ doc.name }} has transitioned to: {{ doc.workflow_state }}.",
+    "recipients": [
+      {
+        "doctype": "Notification Recipient",
+        "receiver_by_role": "Assets Management Department"
+      }
+    ]
+  },
+  {
+    "doctype": "Notification",
+    "enabled": 1,
+    "document_type": "Maintenance Request",
+    "event": "Value Change",
+    "value_changed": "workflow_state",
+    "channel": "Email",
+    "subject": "Maintenance Request {{ doc.name }} moved to {{ doc.workflow_state }}",
+    "message": "The Maintenance Request {{ doc.name }} has transitioned to: {{ doc.workflow_state }}.",
+    "recipients": [
+      {
+        "doctype": "Notification Recipient",
+        "receiver_by_role": "Assets Management Department"
+      }
+    ]
+  },
+  {
+    "doctype": "Notification",
+    "enabled": 1,
+    "document_type": "Demolition Request",
+    "event": "Value Change",
+    "value_changed": "workflow_state",
+    "channel": "Email",
+    "subject": "Demolition Request {{ doc.name }} moved to {{ doc.workflow_state }}",
+    "message": "The Demolition Request {{ doc.name }} has transitioned to: {{ doc.workflow_state }}.",
+    "recipients": [
+      {
+        "doctype": "Notification Recipient",
+        "receiver_by_role": "Assets Management Department"
+      }
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {"doctype": "Role", "role_name": "Data Entry Staff", "desk_access": 1},
+  {"doctype": "Role", "role_name": "Assets Management Department", "desk_access": 1},
+  {"doctype": "Role", "role_name": "Safety Department", "desk_access": 1},
+  {"doctype": "Role", "role_name": "Planning Department", "desk_access": 1},
+  {"doctype": "Role", "role_name": "Investment Department", "desk_access": 1},
+  {"doctype": "Role", "role_name": "TBC", "desk_access": 1},
+  {"doctype": "Role", "role_name": "Director", "desk_access": 1}
+]

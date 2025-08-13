@@ -1,0 +1,61 @@
+Source,Target
+Madares Business (Asset Management),مدارس للأعمال (إدارة الأصول)
+MOE Asset,أصل وزارة التعليم
+Asset Name (Arabic),اسم الأصل (عربي)
+Asset Name (English),اسم الأصل (إنجليزي)
+Asset Type,نوع الأصل
+Current Status,الحالة الحالية
+Registration Date,تاريخ التسجيل
+Location,الموقع
+Latitude,خط العرض
+Longitude,خط الطول
+Address,العنوان
+Boundary (GeoJSON),حدود (GeoJSON)
+Location Map,خريطة الموقع
+Specifications,المواصفات
+Length (m),الطول (م)
+Width (m),العرض (م)
+Height (m),الارتفاع (م)
+Volume (m³),الحجم (م³)
+Safety,السلامة
+Safety Hazards,مخاطر السلامة
+Safety Compliance,الامتثال للسلامة
+Last Safety Review,آخر مراجعة سلامة
+Planning,التخطيط
+Zoning,التصنيف
+Land Use,استخدام الأرض
+Investment,الاستثمار
+Purchase Price,سعر الشراء
+Current Market Value,القيمة السوقية الحالية
+Annual Rental Income,الدخل الإيجاري السنوي
+Cap Rate,معدل الرسملة
+ROI,العائد على الاستثمار
+Attachments,المرفقات
+Attachment,مرفق
+Asset Document,مستند الأصل
+Document Type,نوع المستند
+File,ملف
+OCR Status,حالة التعرف الضوئي
+OCR Text,نص التعرف الضوئي
+Pending OCR,قيد التعرف
+Under Review,تحت المراجعة
+Validated,تم التحقق
+Run OCR,تشغيل التعرف الضوئي
+Asset Allocation Request,طلب تخصيص أصل
+Investment Preparation,تحضير الاستثمار
+Maintenance Request,طلب صيانة
+Demolition Request,طلب هدم
+Director Approval,موافقة المدير
+Approved,معتمد
+Submit,إرسال
+Approve,اعتماد
+Send to Safety,إرسال للسلامة
+Send to Planning,إرسال للتخطيط
+Send to Investment,إرسال للاستثمار
+Send to Director,إرسال للمدير
+Submit to Assets,إرسال لإدارة الأصول
+Assets Review,مراجعة إدارة الأصول
+Safety Review,مراجعة السلامة
+Planning Review,مراجعة التخطيط
+Investment Review,مراجعة الاستثمار
+Draft,مسودة

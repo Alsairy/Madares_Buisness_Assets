@@ -1,0 +1,111 @@
+[
+  {
+    "doctype": "Workflow",
+    "workflow_name": "Asset Registration Process",
+    "document_type": "MOE Asset",
+    "is_active": 1,
+    "send_email_alert": 0,
+    "states": [
+      {"doctype": "Workflow Document State", "state": "Draft", "doc_status": 0, "allow_edit": "Data Entry Staff"},
+      {"doctype": "Workflow Document State", "state": "Assets Review", "doc_status": 0, "allow_edit": "Assets Management Department"},
+      {"doctype": "Workflow Document State", "state": "Safety Review", "doc_status": 0, "allow_edit": "Safety Department"},
+      {"doctype": "Workflow Document State", "state": "Planning Review", "doc_status": 0, "allow_edit": "Planning Department"},
+      {"doctype": "Workflow Document State", "state": "Investment Review", "doc_status": 0, "allow_edit": "Investment Department"},
+      {"doctype": "Workflow Document State", "state": "Director Approval", "doc_status": 0, "allow_edit": "Director"},
+      {"doctype": "Workflow Document State", "state": "Approved", "doc_status": 1, "allow_edit": "Assets Management Department"}
+    ],
+    "transitions": [
+      {"doctype": "Workflow Transition", "state": "Draft", "action": "Submit to Assets", "next_state": "Assets Review", "allowed": "Data Entry Staff"},
+      {"doctype": "Workflow Transition", "state": "Assets Review", "action": "Send to Safety", "next_state": "Safety Review", "allowed": "Assets Management Department"},
+      {"doctype": "Workflow Transition", "state": "Safety Review", "action": "Send to Planning", "next_state": "Planning Review", "allowed": "Safety Department"},
+      {"doctype": "Workflow Transition", "state": "Planning Review", "action": "Send to Investment", "next_state": "Investment Review", "allowed": "Planning Department"},
+      {"doctype": "Workflow Transition", "state": "Investment Review", "action": "Send to Director", "next_state": "Director Approval", "allowed": "Investment Department"},
+      {"doctype": "Workflow Transition", "state": "Director Approval", "action": "Approve", "next_state": "Approved", "allowed": "Director"}
+    ]
+  },
+  {
+    "doctype": "Workflow",
+    "workflow_name": "Asset Allocation Process",
+    "document_type": "Asset Allocation Request",
+    "is_active": 1,
+    "states": [
+      {"doctype": "Workflow Document State", "state": "Draft", "doc_status": 0, "allow_edit": "Planning Department"},
+      {"doctype": "Workflow Document State", "state": "Assets Review", "doc_status": 0, "allow_edit": "Assets Management Department"},
+      {"doctype": "Workflow Document State", "state": "Director Approval", "doc_status": 0, "allow_edit": "Director"},
+      {"doctype": "Workflow Document State", "state": "Allocated", "doc_status": 1, "allow_edit": "Assets Management Department"}
+    ],
+    "transitions": [
+      {"doctype": "Workflow Transition", "state": "Draft", "action": "Submit", "next_state": "Assets Review", "allowed": "Planning Department"},
+      {"doctype": "Workflow Transition", "state": "Assets Review", "action": "Send to Director", "next_state": "Director Approval", "allowed": "Assets Management Department"},
+      {"doctype": "Workflow Transition", "state": "Director Approval", "action": "Approve", "next_state": "Allocated", "allowed": "Director"}
+    ]
+  },
+  {
+    "doctype": "Workflow",
+    "workflow_name": "Investment Preparation Process",
+    "document_type": "Investment Preparation",
+    "is_active": 1,
+    "states": [
+      {"doctype": "Workflow Document State", "state": "Draft", "doc_status": 0, "allow_edit": "Investment Department"},
+      {"doctype": "Workflow Document State", "state": "Safety Review", "doc_status": 0, "allow_edit": "Safety Department"},
+      {"doctype": "Workflow Document State", "state": "Director Approval", "doc_status": 0, "allow_edit": "Director"},
+      {"doctype": "Workflow Document State", "state": "Approved", "doc_status": 1, "allow_edit": "Investment Department"}
+    ],
+    "transitions": [
+      {"doctype": "Workflow Transition", "state": "Draft", "action": "Send to Safety", "next_state": "Safety Review", "allowed": "Investment Department"},
+      {"doctype": "Workflow Transition", "state": "Safety Review", "action": "Send to Director", "next_state": "Director Approval", "allowed": "Safety Department"},
+      {"doctype": "Workflow Transition", "state": "Director Approval", "action": "Approve", "next_state": "Approved", "allowed": "Director"}
+    ]
+  },
+  {
+    "doctype": "Workflow",
+    "workflow_name": "Document Validation Process",
+    "document_type": "Asset Document",
+    "is_active": 1,
+    "states": [
+      {"doctype": "Workflow Document State", "state": "Pending OCR", "doc_status": 0, "allow_edit": "Data Entry Staff"},
+      {"doctype": "Workflow Document State", "state": "Under Review", "doc_status": 0, "allow_edit": "Assets Management Department"},
+      {"doctype": "Workflow Document State", "state": "Validated", "doc_status": 1, "allow_edit": "Assets Management Department"}
+    ],
+    "transitions": [
+      {"doctype": "Workflow Transition", "state": "Pending OCR", "action": "Submit", "next_state": "Under Review", "allowed": "Data Entry Staff"},
+      {"doctype": "Workflow Transition", "state": "Under Review", "action": "Validate", "next_state": "Validated", "allowed": "Assets Management Department"}
+    ]
+  },
+  {
+    "doctype": "Workflow",
+    "workflow_name": "Maintenance Request Process",
+    "document_type": "Maintenance Request",
+    "is_active": 1,
+    "states": [
+      {"doctype": "Workflow Document State", "state": "Draft", "doc_status": 0, "allow_edit": "Assets Management Department"},
+      {"doctype": "Workflow Document State", "state": "Safety Review", "doc_status": 0, "allow_edit": "Safety Department"},
+      {"doctype": "Workflow Document State", "state": "Director Approval", "doc_status": 0, "allow_edit": "Director"},
+      {"doctype": "Workflow Document State", "state": "Approved", "doc_status": 1, "allow_edit": "Assets Management Department"}
+    ],
+    "transitions": [
+      {"doctype": "Workflow Transition", "state": "Draft", "action": "Send to Safety", "next_state": "Safety Review", "allowed": "Assets Management Department"},
+      {"doctype": "Workflow Transition", "state": "Safety Review", "action": "Send to Director", "next_state": "Director Approval", "allowed": "Safety Department"},
+      {"doctype": "Workflow Transition", "state": "Director Approval", "action": "Approve", "next_state": "Approved", "allowed": "Director"}
+    ]
+  },
+  {
+    "doctype": "Workflow",
+    "workflow_name": "Demolition Approval Process",
+    "document_type": "Demolition Request",
+    "is_active": 1,
+    "states": [
+      {"doctype": "Workflow Document State", "state": "Draft", "doc_status": 0, "allow_edit": "Assets Management Department"},
+      {"doctype": "Workflow Document State", "state": "Safety Review", "doc_status": 0, "allow_edit": "Safety Department"},
+      {"doctype": "Workflow Document State", "state": "Investment Review", "doc_status": 0, "allow_edit": "Investment Department"},
+      {"doctype": "Workflow Document State", "state": "Director Approval", "doc_status": 0, "allow_edit": "Director"},
+      {"doctype": "Workflow Document State", "state": "Approved", "doc_status": 1, "allow_edit": "Assets Management Department"}
+    ],
+    "transitions": [
+      {"doctype": "Workflow Transition", "state": "Draft", "action": "Send to Safety", "next_state": "Safety Review", "allowed": "Assets Management Department"},
+      {"doctype": "Workflow Transition", "state": "Safety Review", "action": "Send to Investment", "next_state": "Investment Review", "allowed": "Safety Department"},
+      {"doctype": "Workflow Transition", "state": "Investment Review", "action": "Send to Director", "next_state": "Director Approval", "allowed": "Investment Department"},
+      {"doctype": "Workflow Transition", "state": "Director Approval", "action": "Approve", "next_state": "Approved", "allowed": "Director"}
+    ]
+  }
+]

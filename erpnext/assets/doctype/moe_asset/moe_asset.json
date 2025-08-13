@@ -1,0 +1,269 @@
+{
+ "doctype": "DocType",
+ "name": "MOE Asset",
+ "module": "Assets",
+ "custom": 0,
+ "istable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "track_views": 1,
+ "allow_rename": 1,
+ "engine": "InnoDB",
+ "has_web_view": 0,
+ "show_name_in_global_search": 1,
+ "title_field": "asset_name_en",
+ "autoname": "naming_series:",
+ "naming_rule": "By fieldname",
+ "fields": [
+  {
+   "fieldname": "section_basic",
+   "fieldtype": "Section Break",
+   "label": "Basic Information",
+   "collapsible": 0
+  },
+  {
+   "fieldname": "asset_name_ar",
+   "fieldtype": "Data",
+   "label": "Asset Name (Arabic)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "asset_name_en",
+   "fieldtype": "Data",
+   "label": "Asset Name (English)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "asset_type",
+   "fieldtype": "Select",
+   "label": "Asset Type",
+   "options": "Land\nBuilding\nFacility\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_status",
+   "fieldtype": "Select",
+   "label": "Current Status",
+   "options": "Available\nAllocated\nUnder Maintenance\nUnder Review\nInactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Registration Date"
+  },
+  {
+   "fieldname": "column_basic_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "asset_id",
+   "fieldtype": "Data",
+   "label": "Asset ID",
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "strategic_alignment",
+   "fieldtype": "Data",
+   "label": "Strategic Alignment"
+  },
+  {
+   "fieldname": "ownership",
+   "fieldtype": "Select",
+   "label": "Ownership",
+   "options": "MOE\nLeased\nShared"
+  },
+  {
+   "fieldname": "location_section",
+   "fieldtype": "Section Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude",
+   "precision": "6"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude",
+   "precision": "6"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_location_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "boundary_geojson",
+   "fieldtype": "Long Text",
+   "label": "Boundary (GeoJSON)"
+  },
+  {
+   "fieldname": "map_html",
+   "fieldtype": "HTML",
+   "label": "Location Map"
+  },
+  {
+   "fieldname": "specs_section",
+   "fieldtype": "Section Break",
+   "label": "Specifications"
+  },
+  {
+   "fieldname": "length_m",
+   "fieldtype": "Float",
+   "label": "Length (m)"
+  },
+  {
+   "fieldname": "width_m",
+   "fieldtype": "Float",
+   "label": "Width (m)"
+  },
+  {
+   "fieldname": "height_m",
+   "fieldtype": "Float",
+   "label": "Height (m)"
+  },
+  {
+   "fieldname": "column_specs_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "volume_m3",
+   "fieldtype": "Float",
+   "label": "Volume (m³)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "safety_section",
+   "fieldtype": "Section Break",
+   "label": "Safety"
+  },
+  {
+   "fieldname": "safety_hazards",
+   "fieldtype": "Small Text",
+   "label": "Safety Hazards"
+  },
+  {
+   "fieldname": "safety_compliance",
+   "fieldtype": "Check",
+   "label": "Safety Compliance"
+  },
+  {
+   "fieldname": "column_safety_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_safety_review",
+   "fieldtype": "Date",
+   "label": "Last Safety Review"
+  },
+  {
+   "fieldname": "planning_section",
+   "fieldtype": "Section Break",
+   "label": "Planning"
+  },
+  {
+   "fieldname": "zoning",
+   "fieldtype": "Data",
+   "label": "Zoning"
+  },
+  {
+   "fieldname": "land_use",
+   "fieldtype": "Data",
+   "label": "Land Use"
+  },
+  {
+   "fieldname": "investment_section",
+   "fieldtype": "Section Break",
+   "label": "Investment"
+  },
+  {
+   "fieldname": "purchase_price",
+   "fieldtype": "Currency",
+   "label": "Purchase Price"
+  },
+  {
+   "fieldname": "current_market_value",
+   "fieldtype": "Currency",
+   "label": "Current Market Value"
+  },
+  {
+   "fieldname": "annual_rental_income",
+   "fieldtype": "Currency",
+   "label": "Annual Rental Income"
+  },
+  {
+   "fieldname": "cap_rate",
+   "fieldtype": "Percent",
+   "label": "Cap Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "roi",
+   "fieldtype": "Percent",
+   "label": "ROI",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attachments_section",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Data Entry Staff",
+   "read": 1,
+   "create": 1,
+   "write": 1
+  },
+  {
+   "role": "Assets Management Department",
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Safety Department",
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Planning Department",
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Investment Department",
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "TBC",
+   "read": 1
+  },
+  {
+   "role": "Director",
+   "read": 1,
+   "write": 1
+  }
+ ]
+}

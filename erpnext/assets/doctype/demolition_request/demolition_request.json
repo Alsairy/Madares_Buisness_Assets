@@ -1,0 +1,23 @@
+{
+ "doctype": "DocType",
+ "name": "Demolition Request",
+ "module": "Assets",
+ "custom": 0,
+ "istable": 0,
+ "track_changes": 1,
+ "title_field": "title",
+ "fields": [
+  {"fieldname": "title", "fieldtype": "Data", "label": "Title", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "linked_asset", "fieldtype": "Link", "label": "MOE Asset", "options": "MOE Asset"},
+  {"fieldname": "structural_assessment", "fieldtype": "Small Text", "label": "Structural Assessment"},
+  {"fieldname": "environmental_impact", "fieldtype": "Small Text", "label": "Environmental Impact"},
+  {"fieldname": "management_clearance", "fieldtype": "Check", "label": "Assets Management Clearance", "default": "0"},
+  {"fieldname": "investment_impact", "fieldtype": "Small Text", "label": "Investment Impact Review"}
+ ],
+ "permissions": [
+  {"role": "Assets Management Department", "read": 1, "write": 1, "create": 1},
+  {"role": "Safety Department", "read": 1, "write": 1},
+  {"role": "Investment Department", "read": 1, "write": 1},
+  {"role": "Director", "read": 1, "write": 1}
+ ]
+}

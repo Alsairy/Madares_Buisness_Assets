@@ -1,0 +1,22 @@
+{
+ "doctype": "DocType",
+ "name": "Investment Preparation",
+ "module": "Assets",
+ "custom": 0,
+ "istable": 0,
+ "track_changes": 1,
+ "title_field": "title",
+ "fields": [
+  {"fieldname": "title", "fieldtype": "Data", "label": "Title", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "linked_asset", "fieldtype": "Link", "label": "MOE Asset", "options": "MOE Asset"},
+  {"fieldname": "proposal", "fieldtype": "Text Editor", "label": "Investment Proposal"},
+  {"fieldname": "valuation_summary", "fieldtype": "Small Text", "label": "Valuation Summary"},
+  {"fieldname": "due_diligence", "fieldtype": "Small Text", "label": "Safety Due Diligence"}
+ ],
+ "permissions": [
+  {"role": "Investment Department", "read": 1, "write": 1, "create": 1},
+  {"role": "Safety Department", "read": 1, "write": 1},
+  {"role": "Assets Management Department", "read": 1, "write": 1},
+  {"role": "Director", "read": 1, "write": 1}
+ ]
+}

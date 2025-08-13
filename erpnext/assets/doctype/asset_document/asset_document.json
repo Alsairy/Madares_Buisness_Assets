@@ -1,0 +1,77 @@
+{
+ "doctype": "DocType",
+ "name": "Asset Document",
+ "module": "Assets",
+ "custom": 0,
+ "istable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "title_field": "title",
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "linked_asset",
+   "fieldtype": "Link",
+   "label": "MOE Asset",
+   "options": "MOE Asset"
+  },
+  {
+   "fieldname": "doc_type",
+   "fieldtype": "Select",
+   "label": "Document Type",
+   "options": "Ownership\nSafety Certificate\nZoning Permit\nLease Agreement\nMaintenance Report\nOther"
+  },
+  {
+   "fieldname": "file",
+   "fieldtype": "Attach",
+   "label": "File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ocr_status",
+   "fieldtype": "Select",
+   "label": "OCR Status",
+   "options": "Pending\nProcessing\nCompleted\nFailed",
+   "default": "Pending",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ocr_text",
+   "fieldtype": "Long Text",
+   "label": "OCR Text",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1, "write": 1, "create": 1, "delete": 1
+  },
+  {
+   "role": "Data Entry Staff",
+   "read": 1, "create": 1
+  },
+  {
+   "role": "Assets Management Department",
+   "read": 1, "write": 1
+  },
+  {
+   "role": "Safety Department",
+   "read": 1, "write": 1
+  },
+  {
+   "role": "Planning Department",
+   "read": 1
+  },
+  {
+   "role": "Investment Department",
+   "read": 1
+  }
+ ]
+}

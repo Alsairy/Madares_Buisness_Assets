@@ -1,0 +1,25 @@
+[dir="rtl"] body, [dir="rtl"] .container, body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+[dir="rtl"] .navbar, [dir="rtl"] .page-head, [dir="rtl"] .page-actions, [dir="rtl"] .form-layout, [dir="rtl"] .form-column {
+  direction: rtl;
+}
+[dir="rtl"] .form-column {
+  float: right;
+}
+[dir="rtl"] .page-title .title-text {
+  margin-left: 0;
+  margin-right: .5rem;
+}
+[dir="rtl"] .btn-group > .btn + .btn {
+  margin-right: -1px;
+  margin-left: 0;
+}
+[dir="rtl"] .sidebar {
+  border-left: 1px solid var(--border-color);
+  border-right: 0;
+}
+#lang-toggle {
+  font-family: inherit;
+}
