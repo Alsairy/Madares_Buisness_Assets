@@ -1,1 +1,92 @@
-[]
+[
+ {
+  "doctype": "Server Script",
+  "name": "MOE Asset Volume Calculation",
+  "script_type": "DocType Event",
+  "reference_doctype": "MOE Asset",
+  "event": "Before Save",
+  "script": "from frappe.utils import flt\nif doc.length_m and doc.width_m and doc.height_m:\n    doc.volume_m3 = flt(doc.length_m) * flt(doc.width_m) * flt(doc.height_m)\nelse:\n    doc.volume_m3 = 0",
+  "disabled": 0,
+  "description": "Calculate volume automatically when dimensions are provided"
+ },
+ {
+  "doctype": "Server Script",
+  "name": "MOE Asset ROI Calculation",
+  "script_type": "DocType Event",
+  "reference_doctype": "MOE Asset",
+  "event": "Before Save",
+  "script": "from frappe.utils import flt\nincome = flt(doc.annual_rental_income)\nprice = flt(doc.purchase_price)\nif price > 0:\n    doc.roi = (income / price) * 100\nelse:\n    doc.roi = 0",
+  "disabled": 0,
+  "description": "Calculate ROI based on annual rental income and purchase price"
+ },
+ {
+  "doctype": "Server Script",
+  "name": "MOE Asset Cap Rate Calculation",
+  "script_type": "DocType Event",
+  "reference_doctype": "MOE Asset",
+  "event": "Before Save",
+  "script": "from frappe.utils import flt\nincome = flt(doc.annual_rental_income)\nmarket_value = flt(doc.current_market_value)\nif market_value > 0:\n    doc.cap_rate = (income / market_value) * 100\nelse:\n    doc.cap_rate = 0",
+  "disabled": 0,
+  "description": "Calculate Cap Rate based on annual rental income and current market value"
+ },
+ {
+  "doctype": "Server Script",
+  "name": "MOE Asset Workflow Notification",
+  "script_type": "DocType Event",
+  "reference_doctype": "MOE Asset",
+  "event": "After Save",
+  "script": "if doc.has_value_changed('workflow_state'):\n    from frappe import _\n    \n    state_messages = {\n        'Assets Review': _('Asset submitted for Assets Department review'),\n        'Safety Review': _('Asset submitted for Safety Department review'),\n        'Planning Review': _('Asset submitted for Planning Department review'),\n        'Investment Review': _('Asset submitted for Investment Department review'),\n        'Director Approval': _('Asset submitted for Director approval'),\n        'Approved': _('Asset has been approved and is now active')\n    }\n    \n    if doc.workflow_state in state_messages:\n        frappe.publish_realtime(\n            'msgprint',\n            {\n                'message': state_messages[doc.workflow_state],\n                'title': _('Workflow Update'),\n                'indicator': 'blue'\n            },\n            user=frappe.session.user\n        )",
+  "disabled": 0,
+  "description": "Send notifications when MOE Asset workflow state changes"
+ },
+ {
+  "doctype": "Server Script",
+  "name": "Asset Allocation Request Workflow Notification",
+  "script_type": "DocType Event",
+  "reference_doctype": "Asset Allocation Request",
+  "event": "After Save",
+  "script": "if doc.has_value_changed('workflow_state'):\n    from frappe import _\n    \n    state_messages = {\n        'Assets Review': _('Asset allocation request submitted for Assets Department review'),\n        'Director Approval': _('Asset allocation request submitted for Director approval'),\n        'Allocated': _('Asset allocation request has been approved and allocated')\n    }\n    \n    if doc.workflow_state in state_messages:\n        frappe.publish_realtime(\n            'msgprint',\n            {\n                'message': state_messages[doc.workflow_state],\n                'title': _('Workflow Update'),\n                'indicator': 'blue'\n            },\n            user=frappe.session.user\n        )",
+  "disabled": 0,
+  "description": "Send notifications when Asset Allocation Request workflow state changes"
+ },
+ {
+  "doctype": "Server Script",
+  "name": "Investment Preparation Workflow Notification",
+  "script_type": "DocType Event",
+  "reference_doctype": "Investment Preparation",
+  "event": "After Save",
+  "script": "if doc.has_value_changed('workflow_state'):\n    from frappe import _\n    \n    state_messages = {\n        'Safety Review': _('Investment preparation submitted for Safety Department review'),\n        'Director Approval': _('Investment preparation submitted for Director approval'),\n        'Approved': _('Investment preparation has been approved')\n    }\n    \n    if doc.workflow_state in state_messages:\n        frappe.publish_realtime(\n            'msgprint',\n            {\n                'message': state_messages[doc.workflow_state],\n                'title': _('Workflow Update'),\n                'indicator': 'blue'\n            },\n            user=frappe.session.user\n        )",
+  "disabled": 0,
+  "description": "Send notifications when Investment Preparation workflow state changes"
+ },
+ {
+  "doctype": "Server Script",
+  "name": "Asset Document OCR Workflow Notification",
+  "script_type": "DocType Event",
+  "reference_doctype": "Asset Document",
+  "event": "After Save",
+  "script": "if doc.has_value_changed('workflow_state'):\n    from frappe import _\n    \n    state_messages = {\n        'Pending OCR': _('Asset document is pending OCR processing'),\n        'Under Review': _('Asset document is under review after OCR processing'),\n        'Validated': _('Asset document has been validated and approved')\n    }\n    \n    if doc.workflow_state in state_messages:\n        frappe.publish_realtime(\n            'msgprint',\n            {\n                'message': state_messages[doc.workflow_state],\n                'title': _('Workflow Update'),\n                'indicator': 'blue'\n            },\n            user=frappe.session.user\n        )",
+  "disabled": 0,
+  "description": "Send notifications when Asset Document workflow state changes"
+ },
+ {
+  "doctype": "Server Script",
+  "name": "Maintenance Request Workflow Notification",
+  "script_type": "DocType Event",
+  "reference_doctype": "Maintenance Request",
+  "event": "After Save",
+  "script": "if doc.has_value_changed('workflow_state'):\n    from frappe import _\n    \n    state_messages = {\n        'Safety Review': _('Maintenance request submitted for Safety Department review'),\n        'Director Approval': _('Maintenance request submitted for Director approval'),\n        'Approved': _('Maintenance request has been approved')\n    }\n    \n    if doc.workflow_state in state_messages:\n        frappe.publish_realtime(\n            'msgprint',\n            {\n                'message': state_messages[doc.workflow_state],\n                'title': _('Workflow Update'),\n                'indicator': 'blue'\n            },\n            user=frappe.session.user\n        )",
+  "disabled": 0,
+  "description": "Send notifications when Maintenance Request workflow state changes"
+ },
+ {
+  "doctype": "Server Script",
+  "name": "Demolition Request Workflow Notification",
+  "script_type": "DocType Event",
+  "reference_doctype": "Demolition Request",
+  "event": "After Save",
+  "script": "if doc.has_value_changed('workflow_state'):\n    from frappe import _\n    \n    state_messages = {\n        'Safety Review': _('Demolition request submitted for Safety Department review'),\n        'Investment Review': _('Demolition request submitted for Investment Department review'),\n        'Director Approval': _('Demolition request submitted for Director approval'),\n        'Approved': _('Demolition request has been approved')\n    }\n    \n    if doc.workflow_state in state_messages:\n        frappe.publish_realtime(\n            'msgprint',\n            {\n                'message': state_messages[doc.workflow_state],\n                'title': _('Workflow Update'),\n                'indicator': 'blue'\n            },\n            user=frappe.session.user\n        )",
+  "disabled": 0,
+  "description": "Send notifications when Demolition Request workflow state changes"
+ }
+]

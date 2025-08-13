@@ -1,1 +1,257 @@
-[]
+[
+ {
+  "doctype": "Assignment Rule",
+  "name": "MOE Asset Auto Assignment",
+  "document_type": "MOE Asset",
+  "condition": "doc.workflow_state == 'Assets Review'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "assets@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 2,
+  "description": "Auto-assign MOE Assets in Assets Review state to Assets Management Department"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "MOE Asset Safety Review",
+  "document_type": "MOE Asset",
+  "condition": "doc.workflow_state == 'Safety Review'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "safety@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 1,
+  "description": "Auto-assign MOE Assets in Safety Review state to Safety Department"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "MOE Asset Planning Review",
+  "document_type": "MOE Asset",
+  "condition": "doc.workflow_state == 'Planning Review'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "planning@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 2,
+  "description": "Auto-assign MOE Assets in Planning Review state to Planning Department"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "MOE Asset Investment Review",
+  "document_type": "MOE Asset",
+  "condition": "doc.workflow_state == 'Investment Review'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "investment@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 3,
+  "description": "Auto-assign MOE Assets in Investment Review state to Investment Department"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "MOE Asset Director Approval",
+  "document_type": "MOE Asset",
+  "condition": "doc.workflow_state == 'Director Approval'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "director@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 1,
+  "description": "Auto-assign MOE Assets in Director Approval state to Director"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "Asset Allocation Request Auto Assignment",
+  "document_type": "Asset Allocation Request",
+  "condition": "doc.workflow_state == 'Assets Review'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "assets@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 2,
+  "description": "Auto-assign Asset Allocation Requests in Assets Review state to Assets Management Department"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "Asset Allocation Director Approval",
+  "document_type": "Asset Allocation Request",
+  "condition": "doc.workflow_state == 'Director Approval'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "director@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 1,
+  "description": "Auto-assign Asset Allocation Requests in Director Approval state to Director"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "Investment Preparation Safety Review",
+  "document_type": "Investment Preparation",
+  "condition": "doc.workflow_state == 'Safety Review'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "safety@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 1,
+  "description": "Auto-assign Investment Preparation in Safety Review state to Safety Department"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "Investment Preparation Director Approval",
+  "document_type": "Investment Preparation",
+  "condition": "doc.workflow_state == 'Director Approval'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "director@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 1,
+  "description": "Auto-assign Investment Preparation in Director Approval state to Director"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "Asset Document OCR Review",
+  "document_type": "Asset Document",
+  "condition": "doc.workflow_state == 'Under Review'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "assets@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 1,
+  "description": "Auto-assign Asset Documents in Under Review state to Assets Management Department"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "Maintenance Request Safety Review",
+  "document_type": "Maintenance Request",
+  "condition": "doc.workflow_state == 'Safety Review'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "safety@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 1,
+  "description": "Auto-assign Maintenance Requests in Safety Review state to Safety Department"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "Maintenance Request Director Approval",
+  "document_type": "Maintenance Request",
+  "condition": "doc.workflow_state == 'Director Approval'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "director@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 1,
+  "description": "Auto-assign Maintenance Requests in Director Approval state to Director"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "Demolition Request Safety Review",
+  "document_type": "Demolition Request",
+  "condition": "doc.workflow_state == 'Safety Review'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "safety@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 1,
+  "description": "Auto-assign Demolition Requests in Safety Review state to Safety Department"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "Demolition Request Investment Review",
+  "document_type": "Demolition Request",
+  "condition": "doc.workflow_state == 'Investment Review'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "investment@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 2,
+  "description": "Auto-assign Demolition Requests in Investment Review state to Investment Department"
+ },
+ {
+  "doctype": "Assignment Rule",
+  "name": "Demolition Request Director Approval",
+  "document_type": "Demolition Request",
+  "condition": "doc.workflow_state == 'Director Approval'",
+  "rule": "Round Robin",
+  "users": [
+   {
+    "user": "director@madares.gov.sa"
+   }
+  ],
+  "priority": 0,
+  "disabled": 0,
+  "due_date_based_on": "Creation",
+  "due_days": 1,
+  "description": "Auto-assign Demolition Requests in Director Approval state to Director"
+ }
+]
